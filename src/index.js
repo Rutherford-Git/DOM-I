@@ -43,7 +43,7 @@ console.log('project wired!')
 
 //images
 const logoImg = document.querySelector(`#logo-img`);
-logoImg.scr = siteContent.images[`logo-img`];
+logoImg.src = siteContent.images['logo-img'];
 
 const ctaImg = document.querySelector(`#cta-img`);
 ctaImg.src = siteContent.images[`cta-img`];
@@ -57,11 +57,24 @@ footerthing.textContent = siteContent.footer.copyright;
 footerthing.classList.add('bold');
 
 // header
-const headerNav = document.querySelector('nav a');
-headerNav.classList.add('italic');
+const headerNava = document.querySelectorAll('header nav a');
+headerNava.forEach(element => {
+  element.classList.add('italic');
+});
+
+
+const headerNav = document.querySelector('header nav');
+headerNav.children[0].textContent = siteContent.nav['nav-item-1'];
+headerNav.children[1].textContent = siteContent.nav['nav-item-2'];
+headerNav.children[2].textContent = siteContent.nav['nav-item-3'];
+headerNav.children[3].textContent = siteContent.nav['nav-item-4'];
+headerNav.children[4].textContent = siteContent.nav['nav-item-5'];
+headerNav.children[5].textContent = siteContent.nav['nav-item-6'];
+
+
 
 // contact
-const contactinf = document.querySelector('section .contact');
+const contactinf = document.querySelector('section.contact');
 contactinf.children[0].textContent = siteContent.contact["contact-h4"];
 
 contactinf.children[1].textContent = siteContent.contact["address"];
@@ -69,6 +82,32 @@ contactinf.children[1].textContent = siteContent.contact["address"];
 contactinf.children[2].textContent = siteContent.contact["phone"];
 
 contactinf.children[3].textContent = siteContent.contact["email"];
+
+//top content
+const topContent = document.querySelector('.top-content');
+topContent.children[0].children[0].textContent = siteContent["main-content"]["features-h4"];
+topContent.children[0].children[1].textContent = siteContent['main-content']["features-content"];
+
+topContent.children[1].children[0].textContent = siteContent['main-content']["about-h4"];
+topContent.children[1].children[1].textContent = siteContent['main-content']["about-content"];
+
+//bottom content
+const bottContent = document.querySelector('.bottom-content');
+bottContent.children[0].children[0].textContent = siteContent['main-content']["services-h4"];
+bottContent.children[0].children[1].textContent = siteContent['main-content']["services-content"];
+
+bottContent.children[1].children[0].textContent = siteContent['main-content']['product-h4'];
+bottContent.children[1].children[1].textContent = siteContent['main-content']['product-content'];
+
+bottContent.children[2].children[0].textContent = siteContent['main-content']['vision-h4'];
+bottContent.children[2].children[1].textContent = siteContent['main-content']['vision-content'];
+
+//CTA
+const cta = document.querySelector('.cta-text');
+cta.children[0].textContent = siteContent['cta']['h1'];
+cta.children[1].textContent = siteContent['cta']['button'];
+
+
 
 
 
